@@ -1,0 +1,274 @@
+/* Command Console Styles */
+.command-console {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 100px);
+}
+
+.console-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 20px;
+    flex: 1;
+    min-height: 0;
+}
+
+/* Command Panel */
+.command-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
+}
+
+.device-selector {
+    padding: 16px;
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+}
+
+.device-selector select {
+    margin-top: 8px;
+}
+
+.command-modules {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.command-module {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.command-module h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.command-module .module-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.command-list {
+    padding: 8px;
+}
+
+.command-btn {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 12px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    text-align: left;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin-bottom: 4px;
+}
+
+.command-btn:hover {
+    background-color: var(--bg-secondary);
+}
+
+.command-btn.selected {
+    background-color: rgba(37, 99, 235, 0.15);
+    border-color: var(--primary-color);
+}
+
+.cmd-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.cmd-desc {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* Execution Panel */
+.execution-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.command-config {
+    padding: 20px;
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+}
+
+.command-config h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.command-description {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.payload-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.field-group input,
+.field-group select {
+    margin-top: 6px;
+}
+
+.execute-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+}
+
+.no-command-selected {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.no-command-selected .empty-state-icon {
+    margin-bottom: 16px;
+}
+
+.no-command-selected h2 {
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+.no-command-selected p {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* Results Section */
+.results-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.results-section h3 {
+    padding: 12px 16px;
+    font-size: 14px;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.results-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+}
+
+.result-item {
+    padding: 12px;
+    border-radius: var(--radius-md);
+    margin-bottom: 8px;
+    background-color: var(--bg-secondary);
+    border-left: 3px solid var(--border-color);
+}
+
+.result-item.success {
+    border-left-color: var(--success-color);
+}
+
+.result-item.error {
+    border-left-color: var(--danger-color);
+}
+
+.result-item.pending {
+    border-left-color: var(--warning-color);
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.result-status {
+    flex-shrink: 0;
+}
+
+.result-title {
+    flex: 1;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.result-txn {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: monospace;
+}
+
+.result-time {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.result-data {
+    font-size: 12px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    background-color: var(--bg-primary);
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    overflow-x: auto;
+    max-height: 300px;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .console-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .command-panel {
+        max-height: 300px;
+    }
+}

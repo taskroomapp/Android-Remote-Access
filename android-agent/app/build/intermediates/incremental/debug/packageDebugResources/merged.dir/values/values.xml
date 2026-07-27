@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#121212</color>
+    <color name="on_surface">#E0E0E0</color>
+    <color name="primary">#1565C0</color>
+    <color name="primary_dark">#0D47A1</color>
+    <color name="status_error">#EF5350</color>
+    <color name="status_ok">#66BB6A</color>
+    <color name="surface">#1E1E1E</color>
+    <string name="admin_pass_hint">Password</string>
+    <string name="admin_user_hint">Username, email, or phone</string>
+    <string name="agent_notification_text">Connected to management server</string>
+    <string name="agent_notification_title">Remote agent active</string>
+    <string name="app_name">Remote Agent</string>
+    <string name="connect">Connect</string>
+    <string name="device_uuid_label">Agent UUID: %1$s</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="enroll_help">Enter your credentials to register this device and connect. The server address is built into the app; the device ID is assigned automatically.</string>
+    <string name="permissions_rationale">This app needs permissions to respond to authorized remote management commands.</string>
+    <string name="status_connected">Connected</string>
+    <string name="status_connecting">Connecting…</string>
+    <string name="status_disconnected">Disconnected</string>
+    <string name="status_enrolling">Enrolling device…</string>
+    <style name="Theme.RemoteAgent" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:navigationBarColor">@color/background</item>
+        <item name="android:windowBackground">@color/background</item>
+    </style>
+</resources>

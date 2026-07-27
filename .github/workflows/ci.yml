@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  server:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.21.x"
+      - name: gofmt
+        run: |
+          out="$(gofmt -l ./cmd ./internal)"
+          if [ -n "$out" ]; then
+            echo "gofmt needed on:"
+            echo "$out"
+            exit 1
+          fi
+      - name: Test crypto and related packages
+        run: |
+          go test ./internal/security/...
+          go test ./internal/cryptokit/...
+          go test ./internal/websocket/...
+          go test ./internal/dispatcher/...
+          go test ./internal/api/...
+      - name: Build
+        run: go build ./cmd/...
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Markdown relative links
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          root = Path(".").resolve()
+          errors = []
+          for md in root.rglob("*.md"):
+              if "node_modules" in md.parts or ".git" in md.parts:
+                  continue
+              text = md.read_text(encoding="utf-8")
+              for target in re.findall(r"\[[^\]]+\]\(([^)#]+)(?:#[^)]+)?\)", text):
+                  if "://" in target or target.startswith("mailto:"):
+                      continue
+                  candidate = (md.parent / target).resolve()
+                  if not candidate.exists():
+                      errors.append(f"{md.relative_to(root)} -> {target}")
+          if errors:
+              print("\n".join(errors))
+              raise SystemExit(1)
+          print("Markdown relative links: OK")
+          PY
+      - name: git diff --check
+        run: git diff --check

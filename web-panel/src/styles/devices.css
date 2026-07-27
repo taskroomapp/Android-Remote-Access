@@ -1,0 +1,399 @@
+/* Devices Page Styles */
+.devices-page {
+    padding: 0;
+}
+
+.header-left {
+    flex: 1;
+}
+
+.device-count {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.device-count .total {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.device-count .online {
+    color: var(--success-color);
+}
+
+.device-count .offline {
+    color: var(--text-muted);
+}
+
+.page-subtitle {
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    max-width: 42rem;
+}
+
+/* Filters Bar */
+.filters-bar {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 16px;
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+}
+
+.search-box {
+    flex: 1;
+    position: relative;
+}
+
+.search-box input {
+    padding-left: 36px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 13px;
+    transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+    background-color: var(--border-light);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.filter-btn.online.active {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+/* Devices Table */
+.devices-table-container {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.devices-table {
+    width: 100%;
+}
+
+.devices-table th {
+    background-color: var(--bg-secondary);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.status-col {
+    width: 100px;
+}
+
+.name-col {
+    min-width: 180px;
+}
+
+.device-name-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+    font: inherit;
+}
+
+.device-name-btn:hover .device-name {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+.device-icon {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.device-name {
+    font-weight: 500;
+}
+
+.interfaces-col {
+    min-width: 280px;
+}
+
+.interface-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.interface-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 1.2;
+    color: var(--text-secondary);
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.interface-chip:hover {
+    color: var(--text-primary);
+    border-color: var(--primary-color);
+    background-color: rgba(37, 99, 235, 0.15);
+}
+
+.owner-col {
+    width: 150px;
+}
+
+.os-col {
+    width: 170px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.battery-col {
+    width: 120px;
+}
+
+.battery-display {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.battery-value {
+    font-size: 13px;
+}
+
+.battery-bar {
+    width: 80px;
+    height: 6px;
+    background-color: var(--bg-tertiary);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.battery-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width var(--transition-normal);
+}
+
+.last-seen-col {
+    width: 120px;
+}
+
+.last-seen {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.actions-col {
+    width: 120px;
+}
+
+.device-row {
+    transition: background-color var(--transition-fast);
+}
+
+.action-btn {
+    padding: 6px 10px;
+    background-color: var(--bg-tertiary);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 4px;
+    transition: all var(--transition-fast);
+    color: var(--text-secondary);
+}
+
+.action-btn:hover {
+    background-color: var(--border-light);
+    color: var(--text-primary);
+}
+
+.empty-row {
+    text-align: center;
+    padding: 60px;
+    color: var(--text-muted);
+}
+
+/* Device interfaces modal */
+.device-iface-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(15, 23, 42, 0.72);
+}
+
+.device-iface-modal {
+    width: min(420px, 100%);
+    max-height: min(90vh, 640px);
+    overflow: auto;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 20px;
+}
+
+.device-iface-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.device-iface-modal-header h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.device-iface-modal-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.device-iface-owner {
+    color: var(--text-muted);
+}
+
+.device-iface-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.device-iface-close:hover {
+    color: var(--text-primary);
+    background: var(--border-light);
+}
+
+.device-iface-modal-hint {
+    margin: 14px 0 12px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.device-iface-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.device-iface-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+    transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.device-iface-item:hover {
+    border-color: var(--primary-color);
+    background: rgba(37, 99, 235, 0.12);
+}
+
+.device-iface-item-icon {
+    display: flex;
+    align-items: center;
+    color: var(--primary-light);
+}
+
+.device-iface-item-label {
+    flex: 1;
+    font-weight: 500;
+}
+
+.device-iface-item-chevron {
+    color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .devices-table-container {
+        overflow-x: auto;
+    }
+    
+    .devices-table {
+        min-width: 960px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filters-bar {
+        flex-direction: column;
+    }
+    
+    .filter-buttons {
+        flex-wrap: wrap;
+    }
+}

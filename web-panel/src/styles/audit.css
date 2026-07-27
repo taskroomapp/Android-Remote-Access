@@ -1,0 +1,203 @@
+/* Audit Logs Styles */
+.audit-logs-page {
+    padding: 0;
+}
+
+/* Filters Section */
+.filters-section {
+    padding: 20px;
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.filter-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.filter-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.filter-group input,
+.filter-group select {
+    padding: 8px 12px;
+}
+
+/* Results Summary */
+.results-summary {
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    margin-bottom: 12px;
+}
+
+/* Audit Table */
+.audit-table {
+    width: 100%;
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.audit-table th {
+    background-color: var(--bg-secondary);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.timestamp-cell {
+    white-space: nowrap;
+}
+
+.timestamp {
+    display: flex;
+    flex-direction: column;
+}
+
+.timestamp .date {
+    font-size: 13px;
+}
+
+.timestamp .time {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.admin-cell .admin-name {
+    font-weight: 500;
+}
+
+.device-cell {
+    display: flex;
+    flex-direction: column;
+}
+
+.device-name {
+    font-weight: 500;
+}
+
+.device-id {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.command-cell {
+    max-width: 200px;
+}
+
+.command-type {
+    font-weight: 500;
+    display: block;
+}
+
+.command-payload {
+    font-size: 11px;
+    color: var(--text-muted);
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.status-cell .status-badge {
+    font-size: 11px;
+    padding: 2px 8px;
+}
+
+.ip-cell code {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.transaction-id {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+.page-btn {
+    padding: 8px 16px;
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.page-btn:hover:not(:disabled) {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-info {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .filter-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-actions {
+        flex-direction: column;
+    }
+    
+    .filter-actions button {
+        width: 100%;
+    }
+    
+    .audit-table-container {
+        overflow-x: auto;
+    }
+    
+    .audit-table {
+        min-width: 900px;
+    }
+}

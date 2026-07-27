@@ -1,0 +1,400 @@
+/**
+ * Chat Hybrid design system — single accent, shared HCI patterns for the admin shell.
+ * Reference: Chat-Hybrid controlpanel/web/css/theme.css
+ */
+
+.app-layout.hybrid-layout {
+    --hybrid-font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    --hy-accent: #14b8a6;
+    --hy-accent-strong: #0d9488;
+    --hy-accent-hover: #0f766e;
+    --hy-accent-muted: rgba(13, 148, 136, 0.12);
+    --hy-accent-ring: rgba(20, 184, 166, 0.35);
+
+    --hy-canvas: #eef1f7;
+    --hy-surface: #ffffff;
+    --hy-surface-muted: #f8fafc;
+    --hy-surface-subtle: #f1f5f9;
+    --hy-border: #e2e8f0;
+    --hy-border-strong: #cbd5e1;
+
+    --hy-text: #0f172a;
+    --hy-text-secondary: #475569;
+    --hy-text-muted: #64748b;
+
+    --hy-success: #059669;
+    --hy-success-bg: #ecfdf5;
+    --hy-warn: #d97706;
+    --hy-warn-bg: #fffbeb;
+    --hy-danger: #dc2626;
+    --hy-danger-bg: #fef2f2;
+
+    --hy-primary-btn: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+    --hy-primary-btn-hover: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+    --hy-radius-sm: 0.375rem;
+    --hy-radius-md: 0.5rem;
+    --hy-radius-lg: 0.75rem;
+    --hy-shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.06);
+    --hy-transition: 0.15s ease;
+
+    /* Bridge legacy tokens used by Dashboard, Devices, global buttons */
+    --primary-color: var(--hy-accent-strong);
+    --primary-dark: var(--hy-accent-hover);
+    --primary-light: var(--hy-accent);
+    --bg-primary: var(--hy-canvas);
+    --bg-secondary: var(--hy-surface);
+    --bg-tertiary: var(--hy-surface-subtle);
+    --bg-card: var(--hy-surface);
+    --text-primary: var(--hy-text);
+    --text-secondary: var(--hy-text-secondary);
+    --text-muted: var(--hy-text-muted);
+    --border-color: var(--hy-border);
+    --border-light: var(--hy-border-strong);
+    --success-color: var(--hy-success);
+    --warning-color: var(--hy-warn);
+    --danger-color: var(--hy-danger);
+    --error-color: var(--hy-danger);
+
+    font-family: var(--hybrid-font);
+    color: var(--hy-text);
+    background: var(--hy-canvas);
+}
+
+.app-layout.hybrid-layout .main-content {
+    background:
+        radial-gradient(ellipse 100% 60% at 100% 0%, rgba(45, 212, 191, 0.06), transparent 50%),
+        radial-gradient(ellipse 80% 50% at 0% 100%, rgba(99, 102, 241, 0.04), transparent 45%),
+        var(--hy-canvas);
+    color: var(--hy-text);
+}
+
+/* ── Sidebar (Hybrid dark nav, teal active — not per-page colors) ── */
+.app-layout.hybrid-layout .sidebar {
+    background: linear-gradient(165deg, #0d1117 0%, #121820 48%, #0a0d12 100%);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 4px 0 32px rgba(0, 0, 0, 0.12);
+}
+
+.app-layout.hybrid-layout .sidebar-header {
+    border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+.app-layout.hybrid-layout .logo-text {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.app-layout.hybrid-layout .connection-status {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.72);
+    border-radius: 9999px;
+    padding: 0.25rem 0.625rem;
+}
+
+.app-layout.hybrid-layout .online-counter {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.75rem;
+}
+
+.app-layout.hybrid-layout .nav-item {
+    color: rgba(255, 255, 255, 0.72);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: background var(--hy-transition), color var(--hy-transition), border-color var(--hy-transition);
+}
+
+.app-layout.hybrid-layout .nav-item:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.app-layout.hybrid-layout .nav-item.active {
+    color: #f0fdfa;
+    background: var(--hy-accent-muted);
+    border-color: rgba(45, 212, 191, 0.22);
+    box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.08);
+}
+
+.app-layout.hybrid-layout .nav-item.active .nav-icon {
+    color: var(--hy-accent);
+}
+
+.app-layout.hybrid-layout .sidebar-footer {
+    border-top-color: rgba(255, 255, 255, 0.06);
+}
+
+.app-layout.hybrid-layout .user-name {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.app-layout.hybrid-layout .user-role {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.app-layout.hybrid-layout .user-avatar {
+    background: linear-gradient(135deg, rgba(45, 212, 191, 0.35), rgba(13, 148, 136, 0.5));
+}
+
+.app-layout.hybrid-layout .logout-btn {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ── HCI: focus, disabled, motion ── */
+.app-layout.hybrid-layout :where(
+    button,
+    a.btn-primary,
+    a.btn-secondary,
+    [role="button"],
+    input,
+    select,
+    textarea,
+    .fb-icon-btn,
+    .fb-btn-sm,
+    .suite-btn,
+    .cm-nav-item,
+    .cm-btn
+):focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--hy-surface), 0 0 0 4px var(--hy-accent-ring);
+}
+
+.app-layout.hybrid-layout :where(
+    button,
+    .suite-btn,
+    .fb-btn-sm,
+    .cm-btn
+):disabled,
+.app-layout.hybrid-layout :where(
+    button,
+    .suite-btn
+):disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .app-layout.hybrid-layout * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ── Legacy buttons → same primary / secondary as operator pages ── */
+.app-layout.hybrid-layout .btn-primary {
+    background: var(--hy-primary-btn);
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(13, 148, 136, 0.25);
+}
+
+.app-layout.hybrid-layout .btn-primary:hover:not(:disabled) {
+    background: var(--hy-primary-btn-hover);
+}
+
+.app-layout.hybrid-layout .btn-secondary {
+    background: var(--hy-surface);
+    color: var(--hy-text-secondary);
+    border: 1px solid var(--hy-border);
+}
+
+.app-layout.hybrid-layout .btn-secondary:hover:not(:disabled) {
+    background: var(--hy-surface-muted);
+    border-color: var(--hy-border-strong);
+    color: var(--hy-text);
+}
+
+.app-layout.hybrid-layout .btn-danger {
+    background: var(--hy-danger-bg);
+    color: var(--hy-danger);
+    border: 1px solid #fecaca;
+}
+
+/* ── Operator templates: one accent, not blue per surface ── */
+.app-layout.hybrid-layout .fb-breadcrumb button {
+    color: var(--hy-accent-strong);
+}
+
+.app-layout.hybrid-layout .fb-tree-active > .fb-tree-row,
+.app-layout.hybrid-layout .fb-icon-btn.fb-active,
+.app-layout.hybrid-layout .fb-row.fb-row-active,
+.app-layout.hybrid-layout .fb-row.fb-row-selected {
+    background: var(--hy-accent-muted);
+}
+
+.app-layout.hybrid-layout .fb-tree-active > .fb-tree-row {
+    border-left-color: var(--hy-accent-strong);
+    color: var(--hy-accent-hover);
+}
+
+.app-layout.hybrid-layout .fb-btn-primary,
+.app-layout.hybrid-layout .fb-btn.fb-btn-primary {
+    background: var(--hy-primary-btn);
+    border: none;
+    color: #fff;
+}
+
+.app-layout.hybrid-layout .fb-btn-sm.fb-btn-accent,
+.app-layout.hybrid-layout .cm-btn-accent {
+    background: var(--hy-accent-strong);
+    border-color: var(--hy-accent-strong);
+    color: #fff;
+}
+
+.app-layout.hybrid-layout .cm-nav-item.cm-nav-active {
+    background: var(--hy-accent-muted);
+    color: var(--hy-accent-hover);
+}
+
+.app-layout.hybrid-layout .cm-list-row.cm-list-active {
+    background: var(--hy-accent-muted);
+    border-left-color: var(--hy-accent-strong);
+}
+
+.app-layout.hybrid-layout .cm-tab.cm-tab-active {
+    color: var(--hy-accent-strong);
+    border-bottom-color: var(--hy-accent);
+}
+
+.app-layout.hybrid-layout .cm-action-primary {
+    background: var(--hy-accent-strong);
+    border-color: var(--hy-accent-strong);
+}
+
+.app-layout.hybrid-layout .cm-badge-unread {
+    background: var(--hy-accent-strong);
+}
+
+.app-layout.hybrid-layout .xfer-stat-active {
+    color: var(--hy-accent-strong);
+}
+
+.app-layout.hybrid-layout .xfer-progress-bar {
+    background: var(--hy-accent-strong);
+}
+
+.app-layout.hybrid-layout .lv-view-tab.lv-tab-active,
+.app-layout.hybrid-layout .loc-mode-btn.loc-active {
+    color: var(--hy-accent-strong);
+    border-color: var(--hy-accent);
+    background: var(--hy-accent-muted);
+}
+
+.app-layout.hybrid-layout .lv-timeline-item.lv-timeline-active {
+    border-color: var(--hy-accent-strong);
+    box-shadow: 0 0 0 1px var(--hy-accent-strong);
+}
+
+.app-layout.hybrid-layout .suite-btn.suite-view-active {
+    background: var(--hy-primary-btn);
+    border-color: var(--hy-accent-strong);
+    color: #fff;
+}
+
+/* Action buttons: neutral chrome; labels/icons carry meaning (no rainbow pages) */
+.app-layout.hybrid-layout :where(
+    .suite-btn.lv-btn-back,
+    .suite-btn.lv-btn-front,
+    .suite-btn.lv-btn-record,
+    .suite-btn.lv-btn-screen,
+    .suite-btn.loc-btn-get,
+    .suite-btn.loc-btn-track
+) {
+    background: var(--hy-surface);
+    border-color: var(--hy-border);
+    color: var(--hy-text-secondary);
+    width: 100%;
+}
+
+.app-layout.hybrid-layout :where(.suite-btn.lv-btn-stop, .suite-btn.loc-btn-stop) {
+    background: var(--hy-danger-bg);
+    border-color: #fecaca;
+    color: var(--hy-danger);
+}
+
+.app-layout.hybrid-layout .cm-avatar-red,
+.app-layout.hybrid-layout .cm-avatar-teal,
+.app-layout.hybrid-layout .cm-avatar-blue,
+.app-layout.hybrid-layout .cm-avatar-violet,
+.app-layout.hybrid-layout .cm-avatar-amber,
+.app-layout.hybrid-layout .cm-avatar-pink,
+.app-layout.hybrid-layout .cm-avatar-indigo,
+.app-layout.hybrid-layout .cm-avatar-emerald {
+    background: linear-gradient(135deg, #64748b, #475569);
+}
+
+.app-layout.hybrid-layout .cm-avatar-teal,
+.app-layout.hybrid-layout .cm-avatar-emerald {
+    background: linear-gradient(135deg, var(--hy-accent-strong), var(--hy-accent));
+}
+
+/* Inputs in admin shell */
+.app-layout.hybrid-layout :where(input, select, textarea):not([type="checkbox"]):not([type="radio"]) {
+    border-color: var(--hy-border);
+    color: var(--hy-text);
+    background: var(--hy-surface);
+}
+
+.app-layout.hybrid-layout :where(input, select, textarea):focus {
+    border-color: var(--hy-accent);
+    box-shadow: 0 0 0 3px var(--hy-accent-ring);
+}
+
+.app-layout.hybrid-layout .stat-card,
+.app-layout.hybrid-layout .dashboard-card {
+    box-shadow: var(--hy-shadow-card);
+}
+
+.app-layout.hybrid-layout .spinner,
+.app-layout.hybrid-layout .spinner-small,
+.app-layout.hybrid-layout .spinner-large {
+    border-color: var(--hy-border);
+    border-top-color: var(--hy-accent-strong);
+}
+
+.app-layout.hybrid-layout .cmd-json {
+    background: #0f172a;
+}
+
+.app-layout.hybrid-layout .cmd-result-badge.ok {
+    background: var(--hy-success-bg);
+    color: var(--hy-success);
+}
+
+.app-layout.hybrid-layout .cmd-result-badge.bad {
+    background: var(--hy-danger-bg);
+    color: var(--hy-danger);
+}
+
+/* Text truncation utilities (all viewing surfaces) */
+.hy-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.hy-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    min-width: 0;
+}
+
+.hy-path-wrap {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+    font-family: ui-monospace, monospace;
+    font-size: 0.6875rem;
+}

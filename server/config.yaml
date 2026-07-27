@@ -1,0 +1,43 @@
+# Android Remote Access Server Configuration
+
+# Server Configuration
+server:
+  host: "0.0.0.0"
+  port: "8443"
+
+# Database Configuration
+database:
+  url: "postgres://remote_access:eggarf123@localhost:5432/android_remote_access?sslmode=disable"
+
+# Redis Configuration
+redis:
+  addr: "localhost:6379"
+  password: ""
+  db: 0
+
+# Security Configuration
+security:
+  jwt_secret: "your-super-secret-jwt-key-change-in-production-minimum-32-bytes"
+  encryption_key: "dev-only-egl-android-remote-2026-unique-secret"
+  issuer: "android-remote-access"
+  ckx1:
+    enabled: true
+    protocol_version: 1
+    server_x25519_private_key_file: "data/server-x25519.pkcs8"
+    server_ed25519_private_key_file: "data/server-ed25519.pkcs8"
+    allowed_algorithms:
+      - CKX1-X25519-HKDF-SHA256-CHACHA20-POLY1305
+    session_timeout_seconds: 3600
+    handshake_timeout_seconds: 15
+    max_message_bytes: 524288
+
+# TLS Configuration (optional, for production)
+tls:
+  enabled: false
+  cert_file: "/path/to/server.crt"
+  key_file: "/path/to/server.key"
+
+# API Rate Limiting
+rate_limit:
+  enabled: true
+  requests_per_minute: 100

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Remote Agent</string>
+    <string name="admin_user_hint">Username, email, or phone</string>
+    <string name="admin_pass_hint">Password</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="status_disconnected">Disconnected</string>
+    <string name="status_connecting">Connecting…</string>
+    <string name="status_connected">Connected</string>
+    <string name="status_enrolling">Enrolling device…</string>
+    <string name="agent_notification_title">Remote agent active</string>
+    <string name="agent_notification_text">Connected to management server</string>
+    <string name="permissions_rationale">This app needs permissions to respond to authorized remote management commands.</string>
+    <string name="device_uuid_label">Agent UUID: %1$s</string>
+    <string name="enroll_help">Enter your credentials to register this device and connect. The server address is built into the app; the device ID is assigned automatically.</string>
+</resources>
