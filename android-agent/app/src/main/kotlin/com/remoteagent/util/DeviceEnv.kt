@@ -44,7 +44,7 @@ object DeviceEnv {
     fun defaultLocalServerUrl(): String {
         return if (isEmulator()) {
             // Requires: adb reverse tcp:8443 tcp:8443 (see scripts/emulator-port-forward.ps1)
-            "http://142.168.23.12:8443"
+            "http://192.168.23.12:8443"
         } else {
             "http://10.0.2.2:8443"
         }

@@ -12,7 +12,7 @@ class AgentPreferences(context: Context) {
          * Change this value when building the agent for a specific deployment.
          * Examples: "http://127.0.0.1:8443", "https://remote.example.com"
          */
-        const val BUILT_IN_SERVER_URL = "http://142.168.23.12:8443"
+        const val BUILT_IN_SERVER_URL = "http://192.168.23.12:8443"
 
         private const val PREFS = "agent_config"
         private const val KEY_SERVER_DEVICE_ID = "server_device_id"
